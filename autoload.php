@@ -2,7 +2,9 @@
 
 function classLoader($class)
 {
+
     $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    $path = str_replace('Gaobinzhan/','',$path);
     $file = __DIR__ . '/src/' . $path . '.php';
 
     if (file_exists($file)) {
@@ -11,4 +13,4 @@ function classLoader($class)
 }
 spl_autoload_register('classLoader');
 
-require_once  __DIR__ . '/src/Qiniu/functions.php';
+require_once  __DIR__ . '/src/functions.php';
